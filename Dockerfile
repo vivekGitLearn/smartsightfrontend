@@ -1,6 +1,6 @@
 
 #step build react App
-FROM node:alpine3.20 AS build
+FROM node:21.2.0 AS build
 WORKDIR /smartsightfrontend
 COPY package*.json .
 RUN npm install
