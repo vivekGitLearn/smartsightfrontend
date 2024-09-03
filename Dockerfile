@@ -1,5 +1,5 @@
 # Step 1: Build React App
-FROM node:2.317.0 AS build
+FROM node:alpine3.20 AS build
 WORKDIR /smartsightfrontend
 
 # Copy package files and install dependencies
