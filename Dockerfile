@@ -1,21 +1,32 @@
-
-#step build react App
+# Step 1: Build React App
 FROM node:21.2.0 AS build
 WORKDIR /smartsightfrontend
-COPY package*.json .
+
+# Copy package files and install dependencies
+COPY package*.json ./
 RUN npm install
+
+# Copy the rest of the application code
 COPY . .
 
+# Initialize Tailwind CSS (if needed)
 RUN npx tailwindcss init
 
 # Build the React app
 RUN npm run build
 
-
-# step 2: serve with Nginx
-FROM Nginx:1.23-alpine3
+# Step 2: Serve with Nginx
+FROM nginx:1.23-alpine3
 WORKDIR /usr/share/nginx/html
-RUN rm -rf *
+
+# Remove default Nginx static files
+RUN rm -rf ./*
+
+# Copy built React app from the build stage
 COPY --from=build /smartsightfrontend/build .
+
+# Expose port 80
 EXPOSE 80
-ENTRYPOINT [ "nginx","-g","daemon off;" ]
+
+# Run Nginx in the foreground
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
