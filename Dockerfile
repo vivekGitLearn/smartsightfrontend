@@ -16,7 +16,9 @@ RUN npx tailwindcss init
 RUN npm run build
 
 # Step 2: Serve with Nginx
-FROM nginx:1.23-alpine3
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
 WORKDIR /usr/share/nginx/html
 
 # Remove default Nginx static files
