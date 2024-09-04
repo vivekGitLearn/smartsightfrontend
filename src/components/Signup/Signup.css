@@ -1,5 +1,5 @@
-/* src/components/Login/Login.css */
-.login-wrapper {
+/* src/components/Signup/Signup.css */
+.signup-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     margin: 0;
 }
 
-.login-card {
+.signup-card {
     background: white;
     padding: 40px 30px;
     border-radius: 10px;
@@ -17,13 +17,13 @@
     text-align: center;
 }
 
-.login-card h1 {
+.signup-card h1 {
     font-size: 2rem;
     margin-bottom: 10px;
     color: #333;
 }
 
-.login-subtitle {
+.signup-subtitle {
     color: #666;
     margin-bottom: 30px;
 }
@@ -52,7 +52,7 @@ input {
 }
 
 input:focus {
-    border-color: #8f94fb;
+    border-color: #2c5364;
     outline: none;
 }
 
@@ -63,7 +63,7 @@ input:focus {
 .submit-button {
     width: 100%;
     padding: 10px;
-    background-color: #4e54c8;
+    background-color: #203a43;
     color: white;
     border: none;
     border-radius: 5px;
@@ -73,21 +73,21 @@ input:focus {
 }
 
 .submit-button:hover {
-    background-color: #3b40a4;
+    background-color: #0f2027;
 }
 
-.login-footer {
+.signup-footer {
     margin-top: 20px;
     color: #666;
 }
 
-.login-footer a {
-    color: #4e54c8;
+.signup-footer a {
+    color: #203a43;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-.login-footer a:hover {
-    color: #3b40a4;
+.signup-footer a:hover {
+    color: #0f2027;
 }

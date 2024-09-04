@@ -7,13 +7,15 @@ function Navbar() {
         <nav className='navbar'>
             <ul className="navbar-list">
                 <li className="navbar-item">
-                    <Link to ="/">Login</Link>
+                    <Link to ="/">Home</Link>
                 </li>
                 
                 <li className="navbar-item">
                     <Link to ="/dashboard">Dashboard</Link>
                 </li>
-                
+                <li className="navbar-item">
+                    <Link to="/login">Login</Link>
+                </li>
                 <li className="navbar-item">
                     <Link to ="/signup">Signup</Link>
                 </li>

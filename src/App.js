@@ -6,6 +6,7 @@ import Preferences from './components/Preferences/Preferences';
 import Navbar from './components/Navbar/Navbar';
 import './App.css';
 import Landingpage from './components/Landingpage/Landingpage';
+import Signup from './components/Signup/Signup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Landingpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/preferences" element={<Preferences />} />
       </Routes>
     </Router>
