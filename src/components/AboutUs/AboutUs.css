@@ -1,7 +1,8 @@
 /* src/components/AboutUs/AboutUs.css */
 .about-us {
     padding: 20px;
-    max-width: 800px;
+    max-width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: #f7f6f6;
