@@ -1,0 +1,94 @@
+/* src/components/Dashboard/Dashboard.css */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    /* Add relative positioning for better control */
+}
+
+.sidebar {
+    background-color: #203a43;
+    color: white;
+    padding: 20px;
+    transition: width 0.3s;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Positioning relative to contain the toggle button */
+}
+
+.sidebar.closed {
+    width: 60px;
+    /* Collapsed width */
+    padding: 20px 10px;
+    /* Adjust padding for closed state */
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    /* Adjust width for better fit */
+    height: 40px;
+    /* Add height for consistent button size */
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    /* Position at the top */
+    left: 10px;
+    /* Position close to the left edge */
+    transition: transform 0.3s;
+}
+
+.sidebar.closed .toggle-button {
+    left: 10px;
+    /* Adjust left position to ensure visibility */
+}
+
+.toggle-button:hover {
+    background-color: #2c5364;
+    border-radius: 5px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    margin-top: 60px;
+    /* Ensure the menu starts below the toggle button */
+}
+
+.menu li {
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu li:hover {
+    background-color: #2c5364;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background: #f4f4f4;
+    overflow-y: auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
