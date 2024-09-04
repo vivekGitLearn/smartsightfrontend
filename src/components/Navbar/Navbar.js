@@ -14,6 +14,9 @@ function Navbar() {
                     <Link to ="/dashboard">Dashboard</Link>
                 </li>
                 <li className="navbar-item">
+                    <Link to ="/aboutus">About Us</Link>
+                </li>
+                <li className="navbar-item">
                     <Link to="/login">Login</Link>
                 </li>
                 <li className="navbar-item">

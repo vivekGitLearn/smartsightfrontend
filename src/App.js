@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import './App.css';
 import Landingpage from './components/Landingpage/Landingpage';
 import Signup from './components/Signup/Signup';
-
+import AboutUs from './components/AboutUs/AboutUs';
 function App() {
   return (
     <Router>
@@ -18,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/preferences" element={<Preferences />} />
+        <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
     </Router>
   );
