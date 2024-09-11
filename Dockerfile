@@ -27,8 +27,12 @@ RUN rm -rf ./*
 # Copy built React app from the build stage
 COPY --from=build /smartsightfrontend/build .
 
+# Copy custom NGINX configuration if needed (e.g., SSL setup)
+COPY nginx.conf /etc/nginx/nginx.conf
+
+
 # Expose port 80
 EXPOSE 80
-
+EXPOSE 443
 # Run Nginx in the foreground
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
