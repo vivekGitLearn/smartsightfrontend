@@ -27,11 +27,10 @@ RUN rm -rf ./*
 # Copy built React app from the build stage
 COPY --from=build /smartsightfrontend/build .
 
-# Copy custom Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-# Copy SSL certificates from the host
-COPY /etc/letsencrypt/live/brahama.work.gd/fullchain.pem /etc/nginx/ssl/fullchain.pem
-COPY /etc/letsencrypt/live/brahama.work.gd/privkey.pem /etc/nginx/ssl/privkey.pem
+# Remove the default NGINX configuration (if any) and copy custom NGINX config
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d
+
 EXPOSE 80 443
 # Run Nginx in the foreground
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
