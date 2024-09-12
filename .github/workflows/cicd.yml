@@ -33,5 +33,5 @@ jobs:
         run: docker rm -f smartsightFrontendContainer 
 
       - name: Run New Container
-        run: docker run -d --name smartsightFrontendContainer -p 3000:80 vivekros/smartsight-frontend:latest
-        
+        # run: docker run -d --name smartsightFrontendContainer -p 3000:80 vivekros/smartsight-frontend:latest
+        run: docker run -d --name smartsightFrontendContainer -p 80:80 -p 443:443 -v /etc/letsencrypt:/etc/letsencrypt:ro vivekros/smartsight-frontend:latest
