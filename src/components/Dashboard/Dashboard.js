@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './Dashboard.css';
 import Card from '../Card/Card'; // Assuming you have a Card component
+import { useLocation,Navigate } from 'react-router-dom';
+
 
 function Dashboard() {
   const [isSidebarOpen, setSidebarOpen] = useState(true);

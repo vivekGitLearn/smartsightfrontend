@@ -8,17 +8,25 @@ import './App.css';
 import Landingpage from './components/Landingpage/Landingpage';
 import Signup from './components/Signup/Signup';
 import AboutUs from './components/AboutUs/AboutUs';
+import { RequireToken } from './Auth';
 function App() {
   return (
     <Router>
     <Navbar />
       <Routes>
         <Route path="/" element={<Landingpage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/preferences" element={<Preferences />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireToken>
+              <Dashboard />
+            </RequireToken>
+          }
+        />
       </Routes>
     </Router>
   );
