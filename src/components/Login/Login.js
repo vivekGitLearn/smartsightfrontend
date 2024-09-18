@@ -1,29 +1,46 @@
-// src/components/Login/Login.js
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom'
+
 export default function Login() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    // Function to handle form submission
+    const handleLogin = (event) => {
+        event.preventDefault(); // Prevent default form submission behavior
+        console.log("Username:", username);
+        console.log("Password:", password);
+    };
+
     return (
         <div className="login-wrapper">
             <div className="login-card">
-                <h1>Welcome Back!</h1>
-                <p className="login-subtitle">Please log in to your account</p>
-                <form>
+                <h1>Login Form</h1>
+                <form onSubmit={handleLogin}>
                     <label>
                         <p>Username</p>
-                        <input type="text" placeholder="Enter your username" />
+                        <input
+                            type="text"
+                            placeholder="Enter your username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
                     </label>
                     <label>
                         <p>Password</p>
-                        <input type="password" placeholder="Enter your password" />
+                        <input
+                            type="password"
+                            placeholder="Enter your password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </label>
                     <div className="submit-container">
-                        <button type="submit" className="submit-button">Log In</button>
+                        <button type="submit" className="submit-button">
+                            Log In
+                        </button>
                     </div>
                 </form>
-                <div className="login-footer">
-                    <p>Don't have an account?  <Link to="/signup">Signup</Link></p>
-                </div>
             </div>
         </div>
     );
