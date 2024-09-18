@@ -1,5 +1,6 @@
 import React from 'react'
 import './Signup.css';
+import { Link } from 'react-router-dom';
 function Signup() {
   return (
     <div className="signup-wrapper">
@@ -28,7 +29,7 @@ function Signup() {
           </div>
         </form>
         <div className="signup-footer">
-          <p>Already have an account? <a href="/login">Log In</a></p>
+          <p>Already have an account? <Link to="/login">Log In</Link></p>
         </div>
       </div>
     </div>
