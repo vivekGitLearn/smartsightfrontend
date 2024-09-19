@@ -21,7 +21,7 @@ export default function Login() {
             return;
         } else {
             // make api call to our backend. we'll leave thisfor later
-            axios.post("https://www.brahama.work.gd/api/loginTest", {
+            axios.post("http://localhost:8000/loginTest", {
                 username: username,
                 password: password,
             })
