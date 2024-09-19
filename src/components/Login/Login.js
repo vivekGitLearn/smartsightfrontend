@@ -26,7 +26,7 @@ export default function Login() {
             //     username: username,
             //     password: password,
             // })
-            axios.post("/api/loginTest", {
+            axios.post("/api/api1/loginTest", {
                 username: username,
                 password: password
             })
