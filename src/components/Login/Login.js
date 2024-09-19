@@ -21,12 +21,16 @@ export default function Login() {
             return;
         } else {
             // make api call to our backend. we'll leave thisfor later
-            axios.post("http://localhost:8000/loginTest", {
+            // axios.post("https://www.brahama.work.gd/api/loginTest", {
+            // axios.post("/api/loginTest", {
+            //     username: username,
+            //     password: password,
+            // })
+            axios.post("/api/loginTest", {
                 username: username,
-                password: password,
+                password: password
             })
-
-                .then(function (response) {
+                .then((response) =>{
                     console.log("login");
                     console.log(response.data, "response.data.token");
                     if (response.data.token) {
@@ -34,7 +38,7 @@ export default function Login() {
                         navigate("/dashboard");
                     }
                 })
-                .catch(function (error) {
+                .catch((error) => {
                     console.log(error, "error");
                 });
         }
