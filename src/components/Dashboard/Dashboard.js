@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 import Card from '../Card/Card'; // Assuming you have a Card component
 import { useLocation,Navigate } from 'react-router-dom';
+// import { useNavigate } from "react-router";
 
 
 function Dashboard() {
+  
+  
+  
+  //toggleSlider
   const [isSidebarOpen, setSidebarOpen] = useState(true);
-
+  
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
