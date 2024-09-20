@@ -20,19 +20,23 @@ function Navbar() {
         <nav className='navbar'>
             <ul className="navbar-list">
                 <li className="navbar-item">
-                    <Link to ="/">Home</Link>
+                    <Link to="/">Home</Link>
                 </li>
-                
+
+
                 <li className="navbar-item">
-                    <Link to ="/dashboard">Dashboard</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to ="/aboutus">About Us</Link>
+                    <Link to="/aboutus">About Us</Link>
                 </li>
                 {isAuthenticated ? (
-                    <li className="navbar-item">
-                        <button className='text-white' onClick={signOut}>Logout</button> {/* Assuming you have a logout route */}
-                    </li>
+
+                    <>
+                        <li className="navbar-item">
+                            <Link to="/dashboard">Dashboard</Link>
+                        </li>
+                        <li className="navbar-item">
+                            <button className='text-white' onClick={signOut}>Logout</button> {/* Assuming you have a logout route */}
+                        </li>
+                    </>
                 ) : (
                     <>
                         <li className="navbar-item">
@@ -43,7 +47,7 @@ function Navbar() {
                         </li>
                     </>
                 )}
-                
+
             </ul>
         </nav>
     )
